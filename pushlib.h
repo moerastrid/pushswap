@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pushlib.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 20:19:59 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/10 20:23:31 by ageels           ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   pushlib.h                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: ageels <ageels@student.42.fr>                +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/10 20:19:59 by ageels        #+#    #+#                 */
+/*   Updated: 2022/07/17 22:03:02 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_cont
 {
 	int	ognr;
 	int	inr;
-	int	*bin;
+	//int	*bin;
 }	t_cont;
 
 typedef struct s_list
@@ -48,13 +48,16 @@ int		ft_atoi(const char *s, int *rv);
 
 //listfun (00, 01):
 t_list	*ft_lstnew(t_cont cont);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
-void	ft_lstdelone(t_list *lst, void (*del)(t_cont));
-void	ft_lstclear(t_list **lst, void (*del)(t_cont));
-void	ft_lstiter(t_list *lst, void (*f)(t_cont));
-t_list	*ft_lstmap(t_list *lst, t_cont (*f)(t_cont), void (*del)(t_cont));
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+void	ft_lstdelone(t_list *lst);
+void	ft_lstclear(t_list **lst);
+
+//parse:
+int		ft_parse(int argc, char **argv, t_info *data);
+int		ft_is_nr_double(int nr, t_info *data);
+int		ft_error(t_info *data, int a);
 
 #endif
