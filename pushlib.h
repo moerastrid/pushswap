@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/10 20:19:59 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/18 21:43:55 by ageels        ########   odam.nl         */
+/*   Updated: 2022/07/18 23:13:54 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct s_info
 	int		bigst;
 	int		total;
 }	t_info;
+
+
 //FUNS
 //main:
 
@@ -47,6 +49,7 @@ int		ft_atoi(const char *s, int *rv);
 //listfun (00, 01):
 t_list	*ft_lstnew(t_cont cont);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstonebeforelast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -66,9 +69,23 @@ void	ft_putnum_fd(long long int nbr, int fd);
 void	ft_putlst_fd(t_list *lst, int fd);
 void	ft_putstacks(t_info *data, int fd);
 
-//issort:
+//issorted:
 int		ft_issorted(t_info *data);
 int		ft_issorted_bts(t_list *lst);
 int		ft_issorted_stb(t_list *lst);
+
+//sortfun (00, 01):
+void	ft_pa(t_info *data, int fd);
+void	ft_pb(t_info *data, int fd);
+void	ft_ra(t_info *data, int fd);
+void	ft_rb(t_info *data, int fd);
+void	ft_rra(t_info *data, int fd);
+void	ft_rrb(t_info *data, int fd);
+void	ft_sa(t_info *data, int fd);
+void	ft_sb(t_info *data, int fd);
+
+//smolsort:
+void	ft_smolsort(t_info *data);
+void	ft_sort3(t_info *data);
 
 #endif
