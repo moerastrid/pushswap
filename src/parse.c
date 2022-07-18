@@ -6,20 +6,34 @@
 /*   By: ageels <ageels@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 15:42:01 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/17 22:07:35 by ageels        ########   odam.nl         */
+/*   Updated: 2022/07/18 21:43:23 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushlib.h"
 
+t_list	*ft_lstbig(t_list	*lst, t_list *bigst)
+{
+	bigst->con.ognr = INT32_MIN;
+	while (lst != NULL)
+	{
+		if (lst->con.ognr > bigst->con.ognr && lst->con.inr == -1)
+			bigst = lst;
+		lst = lst->nxt;
+	}
+	return (bigst);
+}
+
 void	ft_calc_con(t_list *lst)
 {
-	int	size;
+	int		i;
+	t_list	bigst;
 
-	size = ft_lstsize(lst);
-	while (size >= 0)
+	i = ft_lstsize(lst) - 1;
+	while (i >= 0)
 	{
-		//hier moeten alle getallen hun uiteindelijke plek in inr krijgen. ^^
+		ft_lstbig(lst, &bigst)->con.inr = i;
+		i--;
 	}
 }
 

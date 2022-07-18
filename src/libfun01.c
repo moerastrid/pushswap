@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   atoi.c                                             :+:    :+:            */
+/*   libfun01.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ageels <ageels@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/03 17:22:02 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/04 14:49:15 by ageels        ########   odam.nl         */
+/*   Updated: 2022/07/18 21:10:45 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,16 @@ int	ft_atoi(const char *s, int *rv)
 		a++;
 	}
 	return (n * minc);
+}
+
+size_t	ft_strlen(const char *string)
+{
+	int	a;
+
+	a = 0;
+	if (!string)
+		return (0);
+	while (string[a] != 0)
+		a++;
+	return (a);
 }

@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>                +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/10 20:19:59 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/17 22:03:02 by ageels        ########   odam.nl         */
+/*   Updated: 2022/07/18 21:43:55 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef struct s_cont
 {
 	int	ognr;
 	int	inr;
-	//int	*bin;
 }	t_cont;
 
 typedef struct s_list
@@ -41,7 +40,6 @@ typedef struct s_info
 //main:
 
 //libft (00, 01):
-void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *string);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *s, int *rv);
@@ -59,5 +57,18 @@ void	ft_lstclear(t_list **lst);
 int		ft_parse(int argc, char **argv, t_info *data);
 int		ft_is_nr_double(int nr, t_info *data);
 int		ft_error(t_info *data, int a);
+void	ft_calc_con(t_list *lst);
+t_list	*ft_lstbig(t_list *lst, t_list *bigst);
+
+//display:
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnum_fd(long long int nbr, int fd);
+void	ft_putlst_fd(t_list *lst, int fd);
+void	ft_putstacks(t_info *data, int fd);
+
+//issort:
+int		ft_issorted(t_info *data);
+int		ft_issorted_bts(t_list *lst);
+int		ft_issorted_stb(t_list *lst);
 
 #endif

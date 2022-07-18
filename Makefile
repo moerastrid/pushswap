@@ -6,7 +6,7 @@
 #    By: ageels <ageels@student.42.fr>                +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/10 20:20:04 by ageels        #+#    #+#                  #
-#    Updated: 2022/07/17 21:55:50 by ageels        ########   odam.nl          #
+#    Updated: 2022/07/18 21:35:44 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ SOURCE = src/main.c\
 	src/listfun00.c\
 	src/listfun01.c\
 	src/parse.c\
+	src/display.c\
+	src/issorted.c\
 
 GREEN = \x1b[32m
 RESET = \033[0m
