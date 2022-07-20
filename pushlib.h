@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   pushlib.h                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: ageels <ageels@student.42.fr>                +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/10 20:19:59 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/18 23:13:54 by ageels        ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   pushlib.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/10 20:19:59 by ageels            #+#    #+#             */
+/*   Updated: 2022/07/20 22:31:44 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 //STRUCS
 typedef struct s_cont
 {
-	int	ognr;
-	int	inr;
+	int				ognr;
+	int				inr;
 }	t_cont;
 
 typedef struct s_list
@@ -30,11 +30,11 @@ typedef struct s_list
 
 typedef struct s_info
 {
-	t_list	*staa;
-	t_list	*stab;
-	int		smolst;
-	int		bigst;
-	int		total;
+	t_list			*staa;
+	t_list			*stab;
+	int				smolst;
+	int				bigst;
+	unsigned int	total;
 }	t_info;
 
 
@@ -60,7 +60,7 @@ void	ft_lstclear(t_list **lst);
 int		ft_parse(int argc, char **argv, t_info *data);
 int		ft_is_nr_double(int nr, t_info *data);
 int		ft_error(t_info *data, int a);
-void	ft_calc_con(t_list *lst);
+void	ft_calc_con(t_info *data);
 t_list	*ft_lstbig(t_list *lst, t_list *bigst);
 
 //display:
@@ -85,7 +85,12 @@ void	ft_sa(t_info *data, int fd);
 void	ft_sb(t_info *data, int fd);
 
 //smolsort:
-void	ft_smolsort(t_info *data);
-void	ft_sort3(t_info *data);
+void	ft_smolsort(t_info *data, int fd);
+void	ft_sort3(t_info *data, int fd);
+void	ft_sort4(t_info *data, int fd);
+void	ft_sort5(t_info *data, int fd);
+
+//bigsort:
+void	ft_bigsort(t_info *data, int fd);
 
 #endif

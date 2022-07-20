@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bigsort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 15:42:01 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/20 21:44:42 by ageels           ###   ########.fr       */
+/*   Created: 2022/07/20 21:24:19 by ageels            #+#    #+#             */
+/*   Updated: 2022/07/20 21:45:16 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushlib.h"
 
-int	main(int argc, char **argv)
+void	ft_bigsort(t_info *data, int fd)
 {
-	t_info	data;
+	int	half;
 
-	if (ft_parse(argc, argv, &data) != 0)
-		return (1);
-	ft_putstacks(&data, 1);
-	if (argc <= 6)
-		ft_smolsort(&data, 1);
-	else
-		ft_bigsort(&data, 1);
-	if (ft_issorted(&data) == 1)
-		ft_putstr_fd("\nsorted\n\n", 1);
-	ft_putstacks(&data, 1);
-	return (0);
+	half = data->total / 2;
+	while (half > 0)
+	{
+		ft_pb(data, fd);
+		half--;
+	}
 }

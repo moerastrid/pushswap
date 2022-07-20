@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   parse.c                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: ageels <ageels@student.42.fr>                +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/07/01 15:42:01 by ageels        #+#    #+#                 */
-/*   Updated: 2022/07/18 21:43:23 by ageels        ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/01 15:42:01 by ageels            #+#    #+#             */
+/*   Updated: 2022/07/20 21:38:23 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@ t_list	*ft_lstbig(t_list	*lst, t_list *bigst)
 	return (bigst);
 }
 
-void	ft_calc_con(t_list *lst)
+void	ft_calc_con(t_info *data)
 {
 	int		i;
 	t_list	bigst;
+	t_list	*lst;
 
-	i = ft_lstsize(lst) - 1;
-	while (i >= 0)
+	lst = data->staa;
+	i = ft_lstsize(lst);
+	data->total = i;
+	while (i > 0)
 	{
 		ft_lstbig(lst, &bigst)->con.inr = i;
 		i--;
@@ -90,6 +93,6 @@ int	ft_parse(int argc, char **argv, t_info *data)
 		ft_lstadd_back(&data->staa, ft_lstnew(con));
 		i++;
 	}
-	ft_calc_con(data->staa);
+	ft_calc_con(data);
 	return (0);
 }

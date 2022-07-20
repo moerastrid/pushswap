@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: ageels <ageels@student.42.fr>                +#+                      #
-#                                                    +#+                       #
-#    Created: 2022/07/10 20:20:04 by ageels        #+#    #+#                  #
-#    Updated: 2022/07/18 23:13:17 by ageels        ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ageels <ageels@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/07/10 20:20:04 by ageels            #+#    #+#              #
+#    Updated: 2022/07/20 21:24:40 by ageels           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SOURCE = src/main.c\
 	src/sortfun00.c\
 	src/sortfun01.c\
 	src/smolsort.c\
+	src/bigsort.c\
 
 GREEN = \x1b[32m
 RESET = \033[0m
