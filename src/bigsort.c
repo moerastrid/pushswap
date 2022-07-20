@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 21:24:19 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/20 21:45:16 by ageels           ###   ########.fr       */
+/*   Updated: 2022/07/20 23:07:50 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	ft_bigsort(t_info *data, int fd)
 {
+	int	i;
 	int	half;
 
+	i = 0;
 	half = data->total / 2;
-	while (half > 0)
+	while (i < data->total)
 	{
-		ft_pb(data, fd);
-		half--;
+		if (data->staa->con.inr > half)
+			ft_pb(data, fd);
+		else
+			ft_ra(data, fd);
+		i++;
 	}
 }

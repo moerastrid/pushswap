@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 20:19:59 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/20 22:31:44 by ageels           ###   ########.fr       */
+/*   Updated: 2022/07/20 23:14:46 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ typedef struct s_info
 	t_list			*stab;
 	int				smolst;
 	int				bigst;
-	unsigned int	total;
+	int				total;
 }	t_info;
-
 
 //FUNS
 //main:
