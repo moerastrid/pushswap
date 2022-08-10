@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 20:19:59 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/20 23:14:46 by ageels           ###   ########.fr       */
+/*   Updated: 2022/08/10 16:36:38 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_lstdelone(t_list *lst);
 void	ft_lstclear(t_list **lst);
 
 //parse:
-int		ft_parse(int argc, char **argv, t_info *data);
+int		ft_parse(char **argv, t_info *data);
 int		ft_is_nr_double(int nr, t_info *data);
 int		ft_error(t_info *data, int a);
 void	ft_calc_con(t_info *data);

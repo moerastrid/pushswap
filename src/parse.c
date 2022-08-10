@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:42:01 by ageels            #+#    #+#             */
-/*   Updated: 2022/07/20 21:38:23 by ageels           ###   ########.fr       */
+/*   Updated: 2022/08/10 16:36:23 by ageels           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,13 @@ int	ft_is_nr_double(int nr, t_info *data)
 	return (0);
 }
 
-int	ft_parse(int argc, char **argv, t_info *data)
+int	ft_parse(char **argv, t_info *data)
 {
 	int		i;
 	int		rv;
 	int		nrfied;
 	t_cont	con;
 
-	if (argc <= 1)
-		return (ft_error(data, 1));
 	data->bigst = INT32_MIN;
 	data->smolst = INT32_MAX;
 	i = 1;
